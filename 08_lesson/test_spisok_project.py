@@ -87,3 +87,4 @@ def test_change_project():
         }
     resp = requests.put(base_url+'/api-v2/projects/'+id_project, json=change, headers=test_token())
     assert resp.status_code == 200
+
