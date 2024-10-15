@@ -4,8 +4,8 @@ import requests
 base_url = "https://yougile.com"
 
 ## Авторизация
-my_login = ''
-my_password = ''
+my_login = 'ideal4763@rustyload.com'
+my_password = '2335108'
 
 # Получить список компаний
 def test_auth():
@@ -102,12 +102,12 @@ def test_nonew_project():
     assert resp.status_code == 400
 
 # Получить проект по несуществующему ID 
-def test_id_project():
+def test_noid_project():
     resp = requests.get(base_url+'/api-v2/projects/'+"4567899", headers=test_token())
     assert resp.status_code == 404
 
 # изменить не существующий проект 
-def test_change_project():
+def test_nochange_project():
     creds = {
         "title": "Очень новый проект"
         }
