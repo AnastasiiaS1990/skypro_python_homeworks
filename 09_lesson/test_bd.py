@@ -8,6 +8,7 @@ def test_insert():
     db = create_engine(db_connection_string)
     sql = text("insert into users(\"user_email\") values (:new_user)")
     rows = db.execute(sql, new_user = '123galash@list.ru')
+    assert rows[-1] == '123galash@list.ru'
 
 def test_update():
     db = create_engine(db_connection_string)
